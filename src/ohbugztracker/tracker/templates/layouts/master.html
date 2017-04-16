@@ -2,56 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% load static %}
     <title>Welcome to Oh Bugz!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="helper.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/helper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">OhBugz</a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">OhBugz</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-md-1 col-md-offset-11">
-                <button class="btn btn-primary">Add Project</button>
-            </div>
-        </div>
-
-        <div class="row medium-margin-top">
-            <div class="col-md-12">
-
-                <div class="box text-center">
-                    <h3 class="text-center"><a href="project.html">Oh Bugz</a></h3>
-                    <div><strong>View Tasks:</strong> <a href="#" class="small">All</a> | <a href="#" class="small">Opened</a></div>
-                    <div><strong>Stats:</strong> <span class="small"> 1 Open, 8 Closed</span></div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                             aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                            40% Complete (success)
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box text-center">
-                    <h3 class="text-center"><a href="project.html">Oh Bugz</a></h3>
-                    <div><strong>View Tasks:</strong> <a href="#" class="small">All</a> | <a href="#" class="small">Opened</a></div>
-                    <div><strong>Stats:</strong> <span class="small"> 1 Open, 8 Closed</span></div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                             aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                            70% Complete
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        <!--This will be a dynamic block-->
+        {% block content %}
+        {% endblock %}
     </div>
+    <footer style="text-align: center">
+        &copy; 2017 OhBugz
+    </footer>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
