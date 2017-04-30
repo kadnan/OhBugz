@@ -18,7 +18,7 @@ def add_new_project(request):
             title = form.cleaned_data['title']
             description = form.cleaned_data['description']
             p = Project.objects.create(title=title, description=description)
-            
+
             if p.pk > 0:
                 return redirect('index')
     return render(request, 'project/add.html', {'form': form})
